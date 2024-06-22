@@ -29,20 +29,38 @@ export default function Home() {
       <main className="flex-grow">
         {/* Image gallery */}
         <div className="flex flex-wrap justify-center gap-4 my-8">
-          <Image src="/exterior1.jpeg" alt="Building Exterior" width={400} height={300} className="rounded-lg shadow-md" />
-          <Image src="/interior.jpeg" alt="Apartment Interior" width={400} height={300} className="rounded-lg shadow-md" />
-          <Image src="/entrance.jpeg" alt="Building Entrance" width={400} height={300} className="rounded-lg shadow-md" />
+          <Image 
+            src="/images/exterior1.jpeg" 
+            alt="Building Exterior" 
+            width={400} 
+            height={300} 
+            className="rounded-lg shadow-md"
+          />
+          <Image 
+            src="/images/interior.jpg" 
+            alt="Apartment Interior" 
+            width={400} 
+            height={300} 
+            className="rounded-lg shadow-md"
+          />
+          <Image 
+            src="/images/entrance.jpg" 
+            alt="Building Entrance" 
+            width={400} 
+            height={300} 
+            className="rounded-lg shadow-md"
+          />
         </div>
 
         {/* Description */}
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-semibold mb-4">Experience Luxury Living in Nasik</h2>
           <p className="text-gray-700">
-            Mount Manor offers spacious 1 and 2 BHK apartments in a prime location in Nasik. 
-            Enjoy modern amenities, stunning views, and easy access to the city's best 
-            attractions. Perfect for families and professionals alike, our apartments 
-            provide comfort, convenience, and value in one of Nasik's most desirable neighborhoods.
-          </p>
+  Mount Manor offers spacious 1 and 2 BHK apartments in a prime location in Nasik. 
+  Enjoy modern amenities, stunning views, and easy access to the city&apos;s best 
+  attractions. Perfect for families and professionals alike, our apartments 
+  provide comfort, convenience, and value in one of Nasik&apos;s most desirable neighborhoods.
+</p>
         </div>
       </main>
 
