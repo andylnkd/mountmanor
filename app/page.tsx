@@ -30,21 +30,21 @@ export default function Home() {
         {/* Image gallery */}
         <div className="flex flex-wrap justify-center gap-4 my-8">
           <Image 
-            src="/images/exterior1.jpeg" 
+            src="/exterior1.jpeg" 
             alt="Building Exterior" 
             width={400} 
             height={300} 
             className="rounded-lg shadow-md"
           />
           <Image 
-            src="/images/interior.jpg" 
+            src="/interior.jpg" 
             alt="Apartment Interior" 
             width={400} 
             height={300} 
             className="rounded-lg shadow-md"
           />
           <Image 
-            src="/images/entrance.jpg" 
+            src="/entrance.jpg" 
             alt="Building Entrance" 
             width={400} 
             height={300} 
