@@ -37,14 +37,14 @@ export default function Home() {
             className="rounded-lg shadow-md"
           />
           <Image 
-            src="/interior.jpg" 
+            src="/interior.jpeg" 
             alt="Apartment Interior" 
             width={400} 
             height={300} 
             className="rounded-lg shadow-md"
           />
           <Image 
-            src="/entrance.jpg" 
+            src="/entrance.jpeg" 
             alt="Building Entrance" 
             width={400} 
             height={300} 
