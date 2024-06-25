@@ -92,7 +92,7 @@ export default function Home() {
               width="100%" 
               height="100%" 
               style={{border:0}} 
-              allowFullScreen="" 
+              allowFullScreen=""
               loading="lazy"
             ></iframe>
           </div>
@@ -111,9 +111,6 @@ export default function Home() {
           <div className="w-full sm:w-1/2 md:w-1/3 mb-4 sm:mb-0">
             <h3 className="text-lg font-semibold mb-2">Quick Links</h3>
             <ul>
-              <li><a href="#" className="hover:text-blue-300">About Us</a></li>
-              <li><a href="#" className="hover:text-blue-300">Amenities</a></li>
-              <li><a href="#" className="hover:text-blue-300">Floor Plans</a></li>
               <li><a href="#" className="hover:text-blue-300">Contact</a></li>
             </ul>
           </div>
@@ -121,8 +118,6 @@ export default function Home() {
             <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/profile.php?id=61561117869761" className="hover:text-blue-300">Facebook</a>
-              <a href="#" className="hover:text-blue-300">Twitter</a>
-              <a href="#" className="hover:text-blue-300">Instagram</a>
             </div>
           </div>
         </div>
