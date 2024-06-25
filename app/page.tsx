@@ -1,23 +1,33 @@
 'use client'
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
-  const [currentImage, setCurrentImage] = useState(0);
   const images = [
     { src: "/exterior1.jpeg", alt: "Building Exterior" },
     { src: "/kitchen.jpeg", alt: "Apartment Interior" },
     { src: "/livingroom.jpeg", alt: "Building Entrance" },
+    { src: "/entrance.jpeg", alt: "Amenities" },
   ];
 
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 2) % images.length);
+  const [currentPair, setCurrentPair] = useState(0);
+
+  const nextPair = () => {
+    setCurrentPair((prev) => (prev + 1) % (images.length / 2));
   };
 
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 2 + images.length) % images.length);
+  const prevPair = () => {
+    setCurrentPair((prev) => (prev - 1 + images.length / 2) % (images.length / 2));
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextPair();
+    }, 5000); // Change image pair every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -48,28 +58,31 @@ export default function Home() {
       <main className="flex-grow max-w-4xl mx-auto px-4 py-6 sm:py-8">
         {/* Carousel */}
         <div className="relative mb-6 sm:mb-8">
-          <div className="flex justify-between">
-            <div className="w-1/2 pr-2">
-              <Image 
-                src={images[currentImage].src}
-                alt={images[currentImage].alt}
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md w-full h-auto"
-              />
-            </div>
-            <div className="w-1/2 pl-2">
-              <Image 
-                src={images[(currentImage + 1) % images.length].src}
-                alt={images[(currentImage + 1) % images.length].alt}
-                width={400}
-                height={300}
-                className="rounded-lg shadow-md w-full h-auto"
-              />
-            </div>
+          <div className="flex justify-between gap-4">
+            {[0, 1].map((offset) => (
+              <div key={offset} className="w-1/2">
+                <Image 
+                  src={images[(currentPair * 2 + offset) % images.length].src}
+                  alt={images[(currentPair * 2 + offset) % images.length].alt}
+                  width={400}
+                  height={300}
+                  className="rounded-lg shadow-md w-full h-auto object-cover"
+                />
+              </div>
+            ))}
           </div>
-          <button onClick={prevImage} className="absolute left-2 top-1/2 bg-white bg-opacity-50 p-2 rounded-full text-2xl" aria-label="Previous image">←</button>
-          <button onClick={nextImage} className="absolute right-2 top-1/2 bg-white bg-opacity-50 p-2 rounded-full text-2xl" aria-label="Next image">→</button>
+          <button onClick={prevPair} className="absolute left-2 top-1/2 bg-white bg-opacity-50 p-2 rounded-full text-2xl transform -translate-y-1/2" aria-label="Previous image">←</button>
+          <button onClick={nextPair} className="absolute right-2 top-1/2 bg-white bg-opacity-50 p-2 rounded-full text-2xl transform -translate-y-1/2" aria-label="Next image">→</button>
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {Array.from({ length: images.length / 2 }).map((_, index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full ${currentPair === index ? 'bg-white' : 'bg-gray-400'}`}
+                onClick={() => setCurrentPair(index)}
+                aria-label={`Go to image pair ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Description */}
