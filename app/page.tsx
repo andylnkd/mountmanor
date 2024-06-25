@@ -100,14 +100,16 @@ export default function Home() {
         <div className="mb-6 sm:mb-8">
           <h2 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-center">Our Location</h2>
           <div className="aspect-w-16 aspect-h-9">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14996.488173437607!2d73.7073887!3d20.0033919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdded006eb3ab5b%3A0x55e75499e31788a6!2sMount%20Manor!5e0!3m2!1sen!2sin!4v1719291606383!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
-              width="100%" 
-              height="100%" 
-              style={{border:0}} 
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14996.488173437607!2d73.7073887!3d20.0033919!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdded006eb3ab5b%3A0x55e75499e31788a6!2sMount%20Manor!5e0!3m2!1sen!2sin!4v1719291606383!5m2!1sen!2sin" 
+  width="600" // Initial width
+  height="450"
+  style={{ border: 0, width: '100%', height: '100%' }}  // Combined styles
+  allowFullScreen 
+  loading="lazy" 
+  referrerPolicy="no-referrer-when-downgrade"
+/>
+ 
           </div>
         </div>
       </main>
